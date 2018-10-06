@@ -10,6 +10,7 @@
 </ol>
 {{--Content--}}
 <div class="container">
-
+    <br>
+    <h1>Welcome to Professional Development Center</h1>
 </div>
 @endsection
