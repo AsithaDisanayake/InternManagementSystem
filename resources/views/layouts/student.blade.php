@@ -26,30 +26,44 @@
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="mainNav">
-    <a class="navbar-brand" href="">student</a>
+    <a class="navbar-brand" href="{{url('/home/'.Auth::user()->username)}}">student</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
-    </button>
+    </button>-
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="">
+          <a class="nav-link" href="{{url('/home/'.Auth::user()->username)}}">
             <i class="fa fa-fw fa-dashboard"></i>
             <span class="nav-link-text">News Feed</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
-          <a class="nav-link" href="/viewStudent">
-            <i class="fa fa-fw fa-area-chart"></i>
+          <a class="nav-link" href="{{url('/viewStudentDetailsForm/'.Auth::user()->username)}}">
+            <i class="fa fa-fw fa-user"></i>
             <span class="nav-link-text">Profile</span>
           </a>
         </li>
+
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+          <a class="nav-link" href="{{url('/viewStudentPreferences/'.Auth::user()->username)}}">
+            <i class="fa fa-fw fa-book"></i>
+            <span class="nav-link-text">Preference</span>
+          </a>
+        </li>
+
+
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-          <a class="nav-link" href="">
+          <a class="nav-link" href="{{url('/studentTask/'.Auth::user()->username)}}">
             <i class="fa fa-fw fa-table"></i>
             <span class="nav-link-text">Tasks</span>
           </a>
         </li>
+
+        {{--{{$ReceivedCount}}--}}
+
+
+
         {{--<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">--}}
           {{--<a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">--}}
             {{--<i class="fa fa-fw fa-wrench"></i>--}}
@@ -130,7 +144,7 @@
         </li>
       </ul>
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown" hidden>
           <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa fa-fw fa-envelope"></i>
             <span class="d-lg-none">Messages
@@ -164,7 +178,7 @@
             <a class="dropdown-item small" href="#">View all messages</a>
           </div>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown" hidden>
           <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa fa-fw fa-bell"></i>
             <span class="d-lg-none">Alerts
@@ -298,6 +312,8 @@
     <!-- Custom scripts for this page-->
     <script src="{{asset('js/sb-admin-datatables.min.js')}}"></script>
     <script src="{{asset('js/sb-admin-charts.min.js')}}"></script>
+
+
   </div>
 </body>
 
