@@ -11,10 +11,10 @@
 <div class="container">
 
 
-<form action="{{url('/upload')}}" method="post" enctype="multipart/form-data">
+<form action="{{url('/uploa')}}" method="post" enctype="multipart/form-data">
     {{csrf_field()}}
 
-
+    <div class="col-md-6">
     <div class="form-group">
         <label for="batch">Batch</label>
         <input type="text" name="batch" class="form-control">
@@ -26,9 +26,10 @@
         <input type="file" name="upload-file" class="form-control">
 
     </div>
-
-    <input class="btn btn-success" type="submit" value="upload" name="submit">
-
+        <div class="form-group">
+    <input class="btn btn-success" type="submit" value="Enroll" name="submit" style="float: right">
+        </div>
+</div>
 </form>
 
     <div class="form-group col-md-8">
